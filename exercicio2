@@ -1,0 +1,126 @@
+int botao = 2;
+int ledG = 9; // g
+int ledF = 8; // f
+int ledE = 7; // e
+int ledD = 6; // d
+int ledB = 4; // b
+int ledA = 3; // a
+int ledC = 5; // c
+int contador = 0;
+bool isPressed;
+
+void setup ()
+{ pinMode (ledG, OUTPUT);
+ pinMode (ledF, OUTPUT);
+ pinMode (ledE, OUTPUT);
+ pinMode (ledD, OUTPUT);
+ pinMode (ledB, OUTPUT);
+ pinMode (ledA, OUTPUT);
+ pinMode (ledC, OUTPUT);
+ pinMode (botao, INPUT);
+ isPressed = LOW;
+}
+void loop () {
+ if(digitalRead(botao) == HIGH) {
+   isPressed = HIGH;
+}
+  if(isPressed == HIGH){
+    switch(contador){
+     case 0:
+   digitalWrite(ledG, HIGH);
+     digitalWrite(ledF, HIGH);
+     digitalWrite(ledE, LOW);
+     digitalWrite(ledD, HIGH);
+     digitalWrite(ledB, HIGH);
+     digitalWrite(ledA, HIGH);
+     digitalWrite(ledC, HIGH);
+     break;
+     case 1:
+    digitalWrite(ledG, HIGH);
+     digitalWrite(ledF, HIGH);
+     digitalWrite(ledE, HIGH);
+     digitalWrite(ledD, HIGH);
+     digitalWrite(ledB, HIGH);
+     digitalWrite(ledA, HIGH);
+     digitalWrite(ledC, HIGH);
+     break;
+     case 2:
+     digitalWrite(ledG, LOW);
+     digitalWrite(ledF, LOW);
+     digitalWrite(ledE, LOW);
+     digitalWrite(ledD, LOW);
+     digitalWrite(ledB, HIGH);
+     digitalWrite(ledA, HIGH);
+     digitalWrite(ledC, HIGH);
+     break;
+     case 3:
+      digitalWrite(ledG, HIGH);
+     digitalWrite(ledF, HIGH);
+     digitalWrite(ledE, HIGH);
+     digitalWrite(ledD, HIGH);
+     digitalWrite(ledB, LOW);
+     digitalWrite(ledA, HIGH);
+     digitalWrite(ledC, HIGH);
+     break;
+     case 4:
+    digitalWrite(ledG, HIGH);
+     digitalWrite(ledF, HIGH);
+     digitalWrite(ledE, LOW);
+     digitalWrite(ledD, HIGH);
+     digitalWrite(ledB, LOW);
+     digitalWrite(ledA, HIGH);
+     digitalWrite(ledC, HIGH);
+     break;
+     case 5:
+      digitalWrite(ledG, HIGH);
+     digitalWrite(ledF, HIGH);
+     digitalWrite(ledE, LOW);
+     digitalWrite(ledD, LOW);
+     digitalWrite(ledB, HIGH);
+     digitalWrite(ledA, LOW);
+     digitalWrite(ledC, HIGH);
+     break;
+     case 6:
+      digitalWrite(ledG, HIGH);
+     digitalWrite(ledF, LOW);
+     digitalWrite(ledE, LOW);
+     digitalWrite(ledD, HIGH);
+     digitalWrite(ledB, HIGH);
+     digitalWrite(ledA, HIGH);
+     digitalWrite(ledC, HIGH);
+     break;
+     case 7:
+       digitalWrite(ledG, HIGH);
+     digitalWrite(ledF, LOW);
+     digitalWrite(ledE, HIGH);
+     digitalWrite(ledD, HIGH);
+     digitalWrite(ledB, HIGH);
+     digitalWrite(ledA, HIGH);
+     digitalWrite(ledC, LOW);
+     break;
+     case 8:
+       digitalWrite(ledG, LOW);
+     digitalWrite(ledF, LOW);
+     digitalWrite(ledE, LOW);
+     digitalWrite(ledD, LOW);
+     digitalWrite(ledB, HIGH);
+     digitalWrite(ledA, LOW);
+     digitalWrite(ledC, HIGH);
+     break;
+     case 9:
+     digitalWrite(ledG, LOW);
+     digitalWrite(ledF, HIGH);
+     digitalWrite(ledE, HIGH);
+     digitalWrite(ledD, HIGH);
+     digitalWrite(ledB, HIGH);
+     digitalWrite(ledA, HIGH);
+     digitalWrite(ledC, HIGH);
+     break;
+   }
+   delay(1000);
+   contador++;
+
+  }
+
+ 
+}

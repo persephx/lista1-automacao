@@ -1,0 +1,39 @@
+int vermelho = 3;
+int amarelo = 4;
+int verde = 5;
+int initialTime= 5; 
+int endTime = 5000;
+int time = initialTime;
+int count = 0;
+
+void setup(){
+    pinMode(vermelho, OUTPUT);  
+    pinMode(amarelo, OUTPUT);   
+    pinMode(verde, OUTPUT);
+}
+
+void loop(){
+
+int thisTime = time / 5;
+digitalWrite(vermelho, HIGH);
+delay(thisTime); 
+digitalWrite(vermelho, LOW);
+delay(thisTime);
+digitalWrite(amarelo, HIGH);
+delay(thisTime);
+digitalWrite(amarelo, LOW);
+delay(thisTime);
+digitalWrite(verde, HIGH);
+delay(thisTime);
+digitalWrite(verde, LOW);
+  
+  if(time <= endTime){ 
+
+     count++; 
+  }
+  
+time = initialTime * (count * 0.20); 
+Serial.println(time);
+  
+  
+}
